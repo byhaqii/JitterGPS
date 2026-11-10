@@ -3,9 +3,17 @@
 Browser geolocation testing for Chrome, Edge, and Brave. Does not change OS location,
 mask your IP, or guarantee that websites accept or cannot detect an override.
 
-## Try on macOS
+## Download (no terminal needed)
 
-Open `dist/JitterGPS.app`, select a browser, and click **Launch Debug Browser**.
+Ready-to-run builds are attached to [GitHub Releases](https://github.com/byhaqii/JitterGPS/releases)
+and rebuilt automatically on every `v*` version tag:
+
+- `JitterGPS-macOS-arm64.zip` — macOS (Apple Silicon). Unzip, open `JitterGPS.app`.
+  The build is unsigned: if Gatekeeper blocks it, right-click the app and choose **Open**.
+- `JitterGPS-Windows-x64.exe` — Windows single-file executable. Built by CI;
+  not yet exercised on a real Windows machine.
+
+After opening the app, select a browser and click **Launch Debug Browser**.
 The browser uses an app-owned isolated profile, not your normal browser profile.
 Avoid sensitive accounts in this debug profile. Keep CDP port 9222 private.
 

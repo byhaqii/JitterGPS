@@ -1,0 +1,36 @@
+name: Release builds
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: macos-latest
+            artifact: JitterGPS-macOS-arm64.zip
+          - os: windows-latest
+            artifact: JitterGPS-Windows-x64.exe
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python build.py
+      - name: Package macOS bundle
+        if: runner.os == 'macOS'
+        run: ditto -c -k --sequesterRsrc --keepParent dist/JitterGPS.app "${{ matrix.artifact }}"
+      - name: Package Windows executable
+        if: runner.os == 'Windows'
+        run: Copy-Item dist/JitterGPS.exe "${{ matrix.artifact }}"
+      - name: Attach artifacts to release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ matrix.artifact }}
