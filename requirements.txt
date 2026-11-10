@@ -1,0 +1,5 @@
+customtkinter>=5.2.0
+requests>=2.31.0
+websockets>=12.0
+pyinstaller>=6.3.0
+tkintermapview>=1.30,<2

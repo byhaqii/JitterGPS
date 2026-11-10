@@ -1,0 +1,7 @@
+# Versions used for the verified Apple Silicon local build.
+customtkinter==6.0.0
+requests==2.34.2
+websockets==17.4
+pyinstaller==6.22.3
+tkintermapview==1.30
+pillow==13.0.0

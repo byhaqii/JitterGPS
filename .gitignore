@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+build/
+dist/
+*.spec
+.DS_Store
+
+# Internal working notes and delivery evidence (contain personal info)
+HANDOFF.md
+.hallmark/
+anti-slop/
+
+# Design-skill scratch output
+.taste-skill/
