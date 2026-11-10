@@ -45,6 +45,12 @@ Requires Python 3.10+ with Tk support and a supported browser installed.
 git clone https://github.com/byhaqii/JitterGPS.git && cd JitterGPS && python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt && .venv/bin/python main.py
 ```
 
+Windows (cmd/PowerShell; supported but not yet exercised on a real Windows machine):
+
+```bat
+git clone https://github.com/byhaqii/JitterGPS.git && cd JitterGPS && python -m venv .venv && .venv\Scripts\python.exe -m pip install -r requirements.txt && .venv\Scripts\python.exe main.py
+```
+
 ## Live development preview
 
 ```sh
